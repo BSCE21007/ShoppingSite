@@ -10,6 +10,7 @@ body {
 }
 
 .navbar {
+    z-index: 10;
     background-color: #131921;
     position: sticky;
     top: 0;
@@ -199,9 +200,10 @@ img {
     }
 }
 
-.card1{
+.card{
+    display: inline-block;
     position: relative;
-    margin: auto;
+    margin: 0 5%;
     padding: 0 auto;
     width: 90%;
 }
@@ -227,4 +229,25 @@ img {
     padding: 10px;
     font-size: 12px;
     font-weight: bold;
+}
+
+.Shops{
+    background-color:white;
+}
+
+.shops  > h2{
+    text-align: left;
+}
+
+.shops > .brands{
+    display: grid;
+    overflow: auto hidden;
+    grid-template-columns: auto auto auto auto auto auto auto auto;
+    background-color: white;
+    padding: 10px;
+    gap: 25px;
+}
+
+.brand > img{
+    height: 150px;
 }
