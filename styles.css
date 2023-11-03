@@ -208,6 +208,10 @@ img {
     width: 90%;
 }
 
+.white{
+    background-color: white;
+}
+
 .catbar{	
 	width: 20%; 
     top: 0;
@@ -231,15 +235,12 @@ img {
     font-weight: bold;
 }
 
-.Shops{
-    background-color:white;
-}
-
-.shops  > h2{
+.white  > h2{
     text-align: left;
+    margin-left: 10px;
 }
 
-.shops > .brands{
+.brands{
     display: grid;
     overflow: auto hidden;
     grid-template-columns: auto auto auto auto auto auto auto auto;
@@ -250,4 +251,37 @@ img {
 
 .brand > img{
     height: 150px;
+}
+
+a {
+    text-decoration: none;
+}
+
+section {
+    margin: 0 auto;
+    display: grid;
+    grid-gap: 1rem;
+}
+
+@media (min-width: 600px) {
+    section { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (min-width: 1080px) {
+    section { grid-template-columns: repeat(3, 1fr); }
+}
+  
+  /* Screen larger than 900px? 3 columns */
+@media (min-width: 1400px) {
+    section { grid-template-columns: repeat(4, 1fr); }
+}
+
+.footer {
+    padding: 5px;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #131921;
+    color: white;
+    text-align: center;
 }
