@@ -38,28 +38,60 @@ function delElement(a){
     cart.splice(a,1);
     displaycart();
 }
-function displaycart(a){
-    let j=0, total=0;
-    document.getElementById("count").innerHTML=cart.length;
-    if(cart.length==0){
-        document.getElementById('cartItem').innerHTML="Your cart is empty";
-        document.getElementById("total").innerHTML="$"+0+".00";
-    }
-    else{
-        document.getElementById("cartItem").innerHTML=cart.map((items) =>
-        {
-            var{image,title,price}=items;
-            total=total+price;
-            document.getElementById("total").innerHTML="$"+total+".00";
-            return(
-                `<div class='cartItem'>
-                <div class='row-img'>
-                <img class='rowimg src=${image}>
+// function displaycart(a){
+//     let j=0, total=0;
+//     document.getElementById("count").innerHTML=cart.length;
+//     if(cart.length==0){
+//         document.getElementById('cartItem').innerHTML="Your cart is empty";
+//         document.getElementById("total").innerHTML="$"+0+".00";
+//     }
+//     else{
+//         document.getElementById("cartItem").innerHTML=cart.map((items) =>
+//         {
+//             var{image,title,price}=items;
+//             total=total+price;
+//             document.getElementById("total").innerHTML="$"+total+".00";
+//             return(
+//                 `<div class='cartItem'>
+//                 <div class='row-img'>
+//                 <img class='rowimg src=${image}>
+//                 </div>
+//                 <p style='font-size:12px;'>${title}</p>
+//                 <h2 style='fotn-size:15px;'>$ ${price}.00</h2>`+
+//                 "<i class='fa-solid fa-trash' onclick='delElement("+(j++)+")'></i></div>"
+//             );
+//         }).join('');
+//     }
+// }
+function displaycart() {
+    let total = 0;
+    const cartItemContainer = document.getElementById("cartItem");
+
+    if (cart.length === 0) {
+        cartItemContainer.innerHTML = "Your cart is empty";
+    } else {
+        cartItemContainer.innerHTML = '';
+
+        cart.forEach((item) => {
+            const { image, title, price } = item;
+            total += price;
+
+            cartItemContainer.innerHTML += `
+                <div class='cartItem'>
+                    <div class='row-img'>
+                        <img class='rowimg' src='${image}'>
+                    </div>
+                    <div class='item-details'>
+                        <p>${title}</p>
+                        <h2>$ ${price}.00</h2>
+                    </div>
+                    <i class='fa-solid fa-trash' onclick='delElement(${cart.indexOf(item)})'></i>
                 </div>
-                <p style='font-size:12px;'>${title}</p>
-                <h2 style='fotn-size:15px;'>$ ${price}.00</h2>`+
-                "<i class='fa-solid fa-trash' onclick='delElement("+(j++)+")'></i></div>"
-            );
-        }).join('');
+            `;
+        });
+
+        document.getElementById("total").innerHTML = `$ ${total}.00`;
     }
+
+    document.getElementById("count").textContent = cart.length;
 }
