@@ -10,6 +10,30 @@ const product = [
         image: 'image/xdbHo4E.png',
         title: 'red bag',
         price: 1500,
+    },
+    {
+        id:2,
+        image: 'image/headphones.jpeg',
+        title: 'headphones',
+        price: 3000,
+    },
+    {
+        id:3,
+        image: 'image/camera.jpeg',
+        title: 'headphones',
+        price: 6000,
+    },
+    {
+        id:4,
+        image: 'image/shoes.jpeg',
+        title: 'shoes',
+        price: 15000,
+    },
+    {
+        id:5,
+        image: 'image/serum.jpeg',
+        title: 'serum',
+        price: 5000,
     }
 ];
 const categories = [...new Set(product.map((item)=>{return item}))]
