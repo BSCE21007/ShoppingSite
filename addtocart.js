@@ -1,13 +1,13 @@
 const product = [
     {
         id:0,
-        Image: 'prod/bag-scaled.webp',
+        image: 'image/bag-scaled.webp',
         title: 'orange bag',
         price: 1000,
     },
     {
         id:1,
-        Image: 'prod/xdbHo4E.png',
+        image: 'image/xdbHo4E.png',
         title: 'red bag',
         price: 1500,
     }
@@ -15,11 +15,11 @@ const product = [
 const categories = [...new Set(product.map((item)=>{return item}))]
 let i=0;
 document.getElementById('root').innerHTML=categories.map((item)=>
-{var{prod,title,price}=item;
+{var{image,title,price}=item;
 return(
     `<div class='box'>
     <div class='img-box'>
-    <img class='images' src=${prod}></img>
+    <img class='images' src=${image}></img>
     </div>
     <div class='bottom'>
     <p>${title}</p>
@@ -48,13 +48,13 @@ function displaycart(a){
     else{
         document.getElementById("cartItem").innerHTML=cart.map((items) =>
         {
-            var{prod,title,price}=items;
+            var{image,title,price}=items;
             total=total+price;
             document.getElementById("total").innerHTML="$"+total+".00";
             return(
                 `<div class='cartItem'>
                 <div class='row-img'>
-                <img class='rowimg src=${prod}>
+                <img class='rowimg src=${image}>
                 </div>
                 <p style='font-size:12px;'>${title}</p>
                 <h2 style='fotn-size:15px;'>$ ${price}.00</h2>`+
