@@ -20,7 +20,7 @@ const product = [
     {
         id:3,
         image: 'image/camera.jpeg',
-        title: 'headphones',
+        title: 'camera',
         price: 6000,
     },
     {
